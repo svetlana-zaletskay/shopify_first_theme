@@ -1,0 +1,14 @@
+jQuery(document).ready(function () {
+
+/*----------- search-form ------------*/
+
+    $('.search-click').on('click',function () {
+        $(this).addClass('open-search-form');
+    });
+    $(document).on('click', function(event) {
+        if (!$(event.target).is("#custom-icon-search, input.search-input")) {
+            $('.search-click').removeClass('open-search-form');
+        }
+    });
+
+});

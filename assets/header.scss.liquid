@@ -1,3 +1,140 @@
-.site-header{
-  background: blue;
+/*=============== CUSTOM VARIABLES ==============*/
+$fontSizeBase: 16px;
+$fontSizeIcon: 28px;
+$colorLinkHover: #bfa588;
+$activeColorItem: #bfa588;
+$borderColor: #e1e1e1;
+$borderColorFocus: #999;
+
+/*=============== CUSTOM MIXINS ==============*/
+
+@mixin baseLink {
+  @include transition(all 0.3s ease-in-out);
+  &:hover,
+  &:active {
+    color: $colorLinkHover;
+    opacity: 1;
+    text-decoration: none;
+  }
 }
+
+//properties
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin padding($top, $right, $bottom, $left) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}
+
+body {
+  font-family: Arimo, sans-serif;
+}
+
+/*=============== HEADER SECTION ==============*/
+.site-nav__link {
+  text-transform: uppercase;
+  @include baseLink;
+}
+
+.custom-icon-cart,
+.custom-icon-search,
+.site-header__cart {
+  @extend .site-nav__link;
+}
+
+.custom-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.button.custom-search {
+  padding: 0 6px;
+}
+
+.site-header__logo-image {
+  &:hover {
+    opacity: 1;
+  }
+}
+
+/*-------- Search form ---------*/
+
+.site-header-search {
+  position: absolute;
+  top: 10px;
+}
+.form-search-header {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  z-index: -2;
+  @include transition(width 0.3s linear, opacity 0.3s linear, z-index 0.3s linear);
+}
+
+.search-click {
+  position: absolute;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+  @include transition(all 0.3s ease-in-out);
+  &.open-search-form {
+    opacity: 0;
+    & + .form-search-header {
+      width: 300px;
+      height: 40px;
+      z-index: 3;
+      opacity: 1;
+      .search-button-submit{
+        left: 255px;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
+.search-button-submit svg {
+  width: 29px;
+  height: 23px;
+}
+.search-input {
+  width: 100%;
+  border: 1px solid $borderColor;
+  @include border-radius(4px);
+  @include transition(border-color 0.3s linear);
+  &:focus {
+    border-color: $borderColorFocus;
+    outline: none;
+  }
+}
+.search-button-submit {
+  position: absolute;
+  left: 0;
+  top: 7px;
+  background: #fff;
+  border: none;
+  transition:left 0.3s linear;
+}
+.grid--no-gutters .grid__item {
+  padding-bottom: 33px;
+}
+.site-nav {
+  margin-bottom: 7px;
+}
+

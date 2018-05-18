@@ -695,6 +695,11 @@
             "value": "Google_Vollkorn_700_serif",
             "label": "Vollkorn Bold",
             "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Arimo, sans-serif",
+            "label": "Arimo",
+            "group": "custom-fonts"
           }
         ]
       },

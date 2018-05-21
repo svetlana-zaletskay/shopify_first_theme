@@ -2,20 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04f8d5f9-e749-48f0-90a8-43a021151314" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/custom.js.liquid" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/snippets/custom-icon-cart.liquid" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/snippets/custom-icon-search.liquid" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/snippets/custom-nav-menu.liquid" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/assets/gift-card.scss.liquid" afterPath="$PROJECT_DIR$/assets/gift-card.scss.liquid" />
+      <change beforePath="$PROJECT_DIR$/assets/custom.js.liquid" afterPath="$PROJECT_DIR$/assets/custom.js.liquid" />
       <change beforePath="$PROJECT_DIR$/assets/header.scss.liquid" afterPath="$PROJECT_DIR$/assets/header.scss.liquid" />
-      <change beforePath="$PROJECT_DIR$/assets/style.scss.liquid" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/theme.scss.liquid" afterPath="$PROJECT_DIR$/assets/theme.scss.liquid" />
-      <change beforePath="$PROJECT_DIR$/config/settings_schema.json" afterPath="$PROJECT_DIR$/config/settings_schema.json" />
-      <change beforePath="$PROJECT_DIR$/layout/theme.liquid" afterPath="$PROJECT_DIR$/layout/theme.liquid" />
       <change beforePath="$PROJECT_DIR$/sections/header.liquid" afterPath="$PROJECT_DIR$/sections/header.liquid" />
-      <change beforePath="$PROJECT_DIR$/snippets/search-form.liquid" afterPath="$PROJECT_DIR$/snippets/search-form.liquid" />
+      <change beforePath="$PROJECT_DIR$/snippets/custom-nav-menu.liquid" afterPath="$PROJECT_DIR$/snippets/custom-nav-menu.liquid" />
+      <change beforePath="$PROJECT_DIR$/snippets/site-nav.liquid" afterPath="$PROJECT_DIR$/snippets/site-nav.liquid" />
       <change beforePath="$PROJECT_DIR$/theme.lock" afterPath="$PROJECT_DIR$/theme.lock" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,102 +18,107 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.554371">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="header.scss.liquid" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/assets/header.scss.liquid">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="402">
-                  <caret line="127" column="10" lean-forward="true" selection-start-line="127" selection-start-column="10" selection-end-line="127" selection-end-column="10" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="site-nav.liquid" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/snippets/site-nav.liquid">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="176">
-                  <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="20" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="custom-nav-menu.liquid" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/snippets/custom-nav-menu.liquid">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="header.liquid" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/sections/header.liquid">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="121">
-                  <caret line="139" column="26" lean-forward="false" selection-start-line="139" selection-start-column="26" selection-end-line="139" selection-end-column="26" />
-                  <folding>
-                    <element signature="e#2831#3014#0#Twig" expanded="false" />
-                    <element signature="e#3195#4755#0#Twig" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="custom.js.liquid" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/assets/custom.js.liquid">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="242">
-                  <caret line="9" column="63" lean-forward="true" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="header.scss.liquid" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/header.scss.liquid">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="193" column="7" lean-forward="true" selection-start-line="193" selection-start-column="7" selection-end-line="193" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="custom-nav-menu.liquid" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/snippets/custom-nav-menu.liquid">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="custom.js.liquid" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/custom.js.liquid">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="theme.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/theme.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="869" column="21" lean-forward="false" selection-start-line="869" selection-start-column="21" selection-end-line="869" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.liquid" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sections/header.liquid">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3366">
+              <caret line="263" column="37" lean-forward="false" selection-start-line="263" selection-start-column="29" selection-end-line="263" selection-end-column="37" />
+              <folding>
+                <element signature="e#224#389#0#Twig" expanded="false" />
+                <element signature="e#395#517#0#Twig" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#header#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="e#2831#3014#0#Twig" expanded="false" />
+                <element signature="e#3195#4755#0#Twig" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="site-nav.liquid" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/snippets/site-nav.liquid">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="484">
+              <caret line="71" column="148" lean-forward="false" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="148" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>stopPropagation</find>
-      <find>focus b</find>
-      <find>site-nav--active</find>
-      <find>nav_alignment</find>
-      <find>three_level_nav</find>
-      <find>.grid--no-gutters .grid__item</find>
-      <find>site-nav--active-dropdown</find>
-      <find>search-header search</find>
-      <find>isTransitioning</find>
-      <find>grid grid--no-gutters grid--table site-header__mobile-nav</find>
-      <find>pad</find>
-      <find>padd</find>
-      <find>button-search-without-input</find>
-      <find>earch-header__submit</find>
-      <find>pointer-events</find>
-      <find>.search-header__submit</find>
-      <find>focus</find>
-      <find>.form-search-header</find>
-      <find>open</find>
-      <find>search-header</find>
-      <find>search</find>
-      <find>.open-search-form</find>
-      <find>site-header__search</find>
-      <find>custom-icon-search</find>
-      <find>custom-</find>
       <find>search-button-submit</find>
-      <find>site-nav--has-dropdown</find>
-      <find>site-nav</find>
-      <find>.search-button-submit</find>
+      <find>megamenu_col__item</find>
+      <find>nav</find>
       <find>site-nav list--inline site-nav--centered</find>
+      <find>&lt;nav</find>
+      <find>site-nav__link site-nav__child-link</find>
+      <find>mobile-nav-wrapper medium-up--hide</find>
+      <find>'site-nav</find>
+      <find>three_level_nav</find>
+      <find>.search-button-submit</find>
+      <find>site-nav__childlist</find>
+      <find>child_list_handle</find>
+      <find>parent</find>
+      <find>downcase</find>
+      <find>escape</find>
+      <find>site-nav--has-centered-dropdown</find>
+      <find>{% co</find>
+      <find>{% coment</find>
+      <find>site-nav--centered</find>
+      <find>site-nav--active</find>
+      <find>site-nav--has-dropdown</find>
+      <find>siteNavHasDropdown</find>
+      <find>small--hide border-bottom</find>
+      <find>$parents</find>
+      <find>site-nav</find>
+      <find>nav-dropdown-container</find>
+      <find>Arimo</find>
+      <find>header-links-in-level-1</find>
+      <find>for</find>
+      <find>teansi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -151,10 +148,11 @@
         <option value="$PROJECT_DIR$/snippets/custom-icon-search.liquid" />
         <option value="$PROJECT_DIR$/assets/theme.scss.liquid" />
         <option value="$PROJECT_DIR$/snippets/search-form.liquid" />
-        <option value="$PROJECT_DIR$/assets/header.scss.liquid" />
-        <option value="$PROJECT_DIR$/assets/custom.js.liquid" />
-        <option value="$PROJECT_DIR$/sections/header.liquid" />
         <option value="$PROJECT_DIR$/snippets/site-nav.liquid" />
+        <option value="$PROJECT_DIR$/sections/header.liquid" />
+        <option value="$PROJECT_DIR$/assets/custom.js.liquid" />
+        <option value="$PROJECT_DIR$/assets/header.scss.liquid" />
+        <option value="$PROJECT_DIR$/snippets/custom-nav-menu.liquid" />
       </list>
     </option>
   </component>
@@ -171,8 +169,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="921" />
-    <option name="width" value="1010" />
+    <option name="x" value="603" />
+    <option name="width" value="1328" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -191,6 +189,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -222,9 +223,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -356,12 +354,21 @@
       <workItem from="1526476940318" duration="6311000" />
       <workItem from="1526542647600" duration="22142000" />
       <workItem from="1526569439403" duration="506000" />
-      <workItem from="1526626893218" duration="16161000" />
+      <workItem from="1526626893218" duration="30477000" />
+      <workItem from="1526883453424" duration="24187000" />
     </task>
+    <task id="LOCAL-00001" summary="1">
+      <created>1526646170270</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1526646170270</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98050000" />
+    <option name="totallyTimeSpent" value="136553000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -371,9 +378,9 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2831661" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16897655" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38795987" sideWeight="0.7148188" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3400223" sideWeight="0.7148188" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33333334" sideWeight="0.64445627" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53177255" sideWeight="0.49573562" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21962096" sideWeight="0.49573562" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15138593" sideWeight="0.68602824" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1881663" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -418,9 +425,9 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3400223" sideWeight="0.7148188" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33333334" sideWeight="0.64445627" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2575251" sideWeight="0.7148188" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34336677" sideWeight="0.49573562" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34225196" sideWeight="0.49573562" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15138593" sideWeight="0.68602824" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15618336" sideWeight="0.31397173" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -431,8 +438,38 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -651,22 +688,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/snippets/custom-icon-search.liquid">
-      <provider editor-type-id="images">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="85" lean-forward="false" selection-start-line="0" selection-start-column="85" selection-end-line="0" selection-end-column="85" />
-          <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/theme.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="1226" column="23" lean-forward="false" selection-start-line="1226" selection-start-column="23" selection-end-line="1226" selection-end-column="23" />
-          <folding />
-        </state>
+      <provider editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/theme.scss.liquid">
@@ -695,33 +723,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/custom.js.liquid">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="9" column="63" lean-forward="true" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
+        <state relative-caret-position="418">
+          <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/header.scss.liquid">
+    <entry file="file://$PROJECT_DIR$/assets/theme.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="127" column="10" lean-forward="true" selection-start-line="127" selection-start-column="10" selection-end-line="127" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snippets/custom-nav-menu.liquid">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="207">
+          <caret line="869" column="21" lean-forward="false" selection-start-line="869" selection-start-column="21" selection-end-line="869" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sections/header.liquid">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="139" column="26" lean-forward="false" selection-start-line="139" selection-start-column="26" selection-end-line="139" selection-end-column="26" />
+        <state relative-caret-position="3366">
+          <caret line="263" column="37" lean-forward="false" selection-start-line="263" selection-start-column="29" selection-end-line="263" selection-end-column="37" />
           <folding>
+            <element signature="e#224#389#0#Twig" expanded="false" />
+            <element signature="e#395#517#0#Twig" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#header#0;n#div#0;n#!!top" expanded="false" />
             <element signature="e#2831#3014#0#Twig" expanded="false" />
             <element signature="e#3195#4755#0#Twig" expanded="false" />
           </folding>
@@ -730,8 +753,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/snippets/site-nav.liquid">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="20" />
+        <state relative-caret-position="484">
+          <caret line="71" column="148" lean-forward="false" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="148" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/header.scss.liquid">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="193" column="7" lean-forward="true" selection-start-line="193" selection-start-column="7" selection-end-line="193" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snippets/custom-nav-menu.liquid">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding />
         </state>
       </provider>

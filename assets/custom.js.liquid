@@ -11,4 +11,14 @@ jQuery(document).ready(function () {
         }
     });
 
+/*----------- navigation ------------*/
+
+    var checkDropdownChild = '.list-has-only-level-1';
+    $(checkDropdownChild).parents('li.navigation-link nav-has-dropdown dropdown-level-1').on('hover', function () {
+        debugger;
+        $(this).css({
+            'position': relative
+        });
+    });
+
 });

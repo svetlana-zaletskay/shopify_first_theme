@@ -2,13 +2,13 @@
 assets/ajax-loader.gif:
   development: 2018-05-14T11:42:56+03:00   deca8b0ecd6974227d157b6d7068995d
 assets/custom.js.liquid:
-  development: 2018-05-18T13:27:35+03:00   8ea9754b3e10f6cfbb3cb3da919bd381
+  development: 2018-05-21T14:38:26+03:00   70b8e2f0c00ddd71bc4d3565440400bf
 assets/gift-card.js:
   development: 2018-05-14T11:42:56+03:00   5f64ba6cb76fbcd82773489d51785bf1
 assets/gift-card.scss.liquid:
   development: 2018-05-16T11:51:11+03:00   bfd6067ad34b425936c11f9553608b51
 assets/header.scss.liquid:
-  development: 2018-05-18T13:27:34+03:00   d3033fbc159a01d19f970d79d4488c81
+  development: 2018-05-21T16:57:54+03:00   a718c17603b00059f213e6fb2e76c91c
 assets/ico-select.svg.liquid:
   development: 2018-05-14T11:42:56+03:00   28de0c672609528b7c55f6f47810784b
 assets/lazysizes.js:
@@ -74,7 +74,7 @@ sections/featured-product.liquid:
 sections/footer.liquid:
   development: 2018-05-14T11:42:55+03:00   9c6cc01f04f0762c7826a9054ebf732e
 sections/header.liquid:
-  development: 2018-05-18T14:52:37+03:00   506f549bf0fa52c7a0686d0993afee79
+  development: 2018-05-21T12:21:11+03:00   9076c159e5ed1e018af110d605ce0979
 sections/hero.liquid:
   development: 2018-05-14T11:42:55+03:00   b75948d15b81b97297a923bc6ed33fc4
 sections/image-bar.liquid:
@@ -112,7 +112,7 @@ snippets/custom-icon-cart.liquid:
 snippets/custom-icon-search.liquid:
   development: 2018-05-17T15:45:06+03:00   09e6e9b246c2f6f5f5fb5329a5f0cfa3
 snippets/custom-nav-menu.liquid:
-  development: 2018-05-18T14:51:15+03:00
+  development: 2018-05-21T17:38:20+03:00   4695f6330f70f2ca003d0bcf43407d2d
 snippets/google-fonts.liquid:
   development: 2018-05-14T11:42:58+03:00   377ddc183ac7882100f47299bb8e0467
 snippets/icon-amazon_payments.liquid:
@@ -234,7 +234,7 @@ snippets/product-price.liquid:
 snippets/search-form.liquid:
   development: 2018-05-18T10:45:38+03:00   840db331fa944678d42ce4dd1fb4f59d
 snippets/site-nav.liquid:
-  development: 2018-05-14T11:43:02+03:00   e819933ae7740eda0987c3bc6d5f8928
+  development: 2018-05-18T19:49:14+03:00   01dd04a797a9d89695436fb893725bee
 snippets/social-meta-tags.liquid:
   development: 2018-05-14T11:43:02+03:00   ae9e213401623b2601abf0ace8e21537
 snippets/social-sharing.liquid:

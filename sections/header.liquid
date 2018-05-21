@@ -123,8 +123,6 @@
       {% if section.settings.align_logo == 'left' %}
         <nav class="grid__item medium-up--one-half small--hide" id="AccessibleNav" role="navigation">
           {% include 'site-nav' %}
-
-          {% include 'custom-nav-menu' %}
         </nav>
       {% endif %}
 
@@ -262,8 +260,9 @@
   </header>
 
   {% if section.settings.align_logo == 'center' %}
-  <nav class="small--hide border-bottom" id="AccessibleNav" role="navigation">
-    {% include 'site-nav', nav_alignment: 'site-nav--centered' %}
+  <nav class="small--hide border-bottom main-navigation container" id="AccessibleNav" role="navigation">
+    {% comment %}{% include 'site-nav', nav_alignment: 'site-nav--centered' %}{% endcomment %}
+    {% include 'custom-nav-menu', nav_alignment: 'site-nav--centered' %}
   </nav>
   {% endif %}
 </div>

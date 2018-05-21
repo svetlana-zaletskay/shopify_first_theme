@@ -6,10 +6,12 @@
             Check if third-level nav exists on each parent link.
         {% endcomment %}
         {%- assign three_level_nav = false -%}
+        {%- assign one_level_nav = false -%}
 
         {% if link.links != blank %}
             {% if link.levels == 1 %}
                 {%- assign three_level_nav = true -%}
+                {%- assign one_level_nav = true -%}
             {% endif %}
         {% endif %}
 
@@ -31,12 +33,15 @@
             <li class="navigation-link nav-has-dropdown{% if three_level_nav %}{% endif %}{% if link.active %}{% endif %}">
                 <a href="{{ link.url }}" class="link-main">{{ link.title }}</a>
                 {% comment %} if link has dropdown {% endcomment %}
-                <div class="container-level-1">
+                <div class="container-level-1 {% if one_level_nav %}xxxxxx{% endif %}">
                     {% if three_level_nav %}
                     <ul class="drop-level-1">
                         {% if link.links != blank %}
                             {% for childlink in link.links %}
-                                <li class="col-in-drop-level-1">
+                            {% if one_level_nav==false%}
+                                <div class="col-in-drop-level-1">
+                            {% endif %}
+                                <li class="">
 
                                     <h2 class="header-links-in-level-1">{{ childlink.title | downcase }}</h2>
 
@@ -59,6 +64,9 @@
                                         </ul>
                                     {% endif %}
                                 </li>
+                            {% if one_level_nav==false%}
+                                </div>
+                            {% endif %}
                             {% endfor %}
 
                             {% if link.levels == 1 %}

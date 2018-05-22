@@ -2,13 +2,13 @@
 assets/ajax-loader.gif:
   development: 2018-05-14T11:42:56+03:00   deca8b0ecd6974227d157b6d7068995d
 assets/custom.js.liquid:
-  development: 2018-05-21T14:38:26+03:00   70b8e2f0c00ddd71bc4d3565440400bf
+  development: 2018-05-22T14:36:13+03:00   3292ab116a78ec4804cb4aeea85d708a
 assets/gift-card.js:
   development: 2018-05-14T11:42:56+03:00   5f64ba6cb76fbcd82773489d51785bf1
 assets/gift-card.scss.liquid:
   development: 2018-05-16T11:51:11+03:00   bfd6067ad34b425936c11f9553608b51
 assets/header.scss.liquid:
-  development: 2018-05-21T16:57:54+03:00   a718c17603b00059f213e6fb2e76c91c
+  development: 2018-05-22T16:16:34+03:00   1dc4b2c7c8f84b1a534a3b48c642ede1
 assets/ico-select.svg.liquid:
   development: 2018-05-14T11:42:56+03:00   28de0c672609528b7c55f6f47810784b
 assets/lazysizes.js:
@@ -112,7 +112,7 @@ snippets/custom-icon-cart.liquid:
 snippets/custom-icon-search.liquid:
   development: 2018-05-17T15:45:06+03:00   09e6e9b246c2f6f5f5fb5329a5f0cfa3
 snippets/custom-nav-menu.liquid:
-  development: 2018-05-21T17:38:20+03:00   4695f6330f70f2ca003d0bcf43407d2d
+  development: 2018-05-22T18:05:58+03:00   85c064d7c471f85f5db8e2b7b8871a86
 snippets/google-fonts.liquid:
   development: 2018-05-14T11:42:58+03:00   377ddc183ac7882100f47299bb8e0467
 snippets/icon-amazon_payments.liquid:

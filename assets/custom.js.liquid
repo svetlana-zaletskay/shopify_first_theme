@@ -1,30 +1,23 @@
 jQuery(document).ready(function () {
 
-/*----------- search-form ------------*/
+    /*----------- search-form ------------*/
 
-    $('.search-click').on('click',function () {
+    $('.search-click').on('click', function () {
         $(this).addClass('open-search-form');
     });
-    $(document).on('click', function(event) {
+    $(document).on('click', function (event) {
         if (!$(event.target).is("#custom-icon-search, input.search-input")) {
             $('.search-click').removeClass('open-search-form');
         }
     });
 
-/*----------- navigation ------------*/
+    /*----------- navigation ------------*/
 
-    var checkDropdownChild = '.list-has-only-level-1';
-    $(checkDropdownChild).parents('li.navigation-link nav-has-dropdown dropdown-level-1').on('hover', function () {
-        debugger;
-        $(this).css({
-            'position': relative
-        });
-    });
-
-    $('.navigation-link').on('hover', function(){
-        $(this).css({'position': 'relative'});
-        $(this).find('').css({'position': 'absolute'; 'left': 0});
-        $(this).find('').toggleClass('container-level-1');
+    $($('.navigation-link.nav-has-dropdown')).hover(function () {
+        var container = $(this).find('.container-level-1');
+//        $(container).animate({width}, 800);
+        if ($(container) && $(container).hasClass('only-one-level')) {
+            $(this).toggleClass('small-menu');
+        }
     })
-
-});
+})

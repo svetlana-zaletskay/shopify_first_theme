@@ -21,7 +21,6 @@
             {% endif %}
         {% endif %}
 
-        {% comment %} if link doesn't has dropdown {% endcomment %}
         {% if link.links == blank %}
             <li class="navigation-link">
                 <a href="{{ link.url }}" class="link-main">{{ link.title }}</a>
@@ -32,26 +31,29 @@
         {% if link.links != blank %}
             <li class="navigation-link nav-has-dropdown{% if three_level_nav %}{% endif %}{% if link.active %}{% endif %}">
                 <a href="{{ link.url }}" class="link-main">{{ link.title }}</a>
-                {% comment %} if link has dropdown {% endcomment %}
 
                 {% if link.type == 'blog_link' %}
                     <div class="container-level-1">
-                        {% for article in blogs.news.articles%}
-                            <div style="display: inline-block;">
-                                <img src="{{ article.image.src | img_url: 'medium'}}"/>
-                                <div>
-                                    {{ article.title }}
-                                </div>
-                                <div>
-                                    {{ article.content }}
-                                </div>
-                                <div>
-                                    <a href="{{ article.url }}">XXX</a>
+                        {% for article in blogs.news.articles %}
+                            <div class="container-blog">
+                                <div class="col-blog">
+                                    <img src="{{ article.image.src | img_url: 'medium'}}"/>
+                                    <div>
+                                        {{ article.title }}
+                                    </div>
+                                    <div>
+                                        {{ article.content }}
+                                    </div>
+                                    <div>
+                                        <a href="{{ article.url }}">XXX</a>
+                                    </div>
                                 </div>
                             </div>
                         {% endfor %}
                     </div>
                 {% else %}
+
+                {% comment %} if link has dropdown {% endcomment %}
 
                 <div class="container-level-1 {% if one_level_nav %}only-one-level{% endif %}">
                     {% if three_level_nav %}
@@ -70,16 +72,6 @@
                                            class="link-to-page link-menu-only-one-level"{% if childlink.active %} aria-current="page"{% endif %}>
                                             {{ childlink.title | downcase }}
                                         </a>
-
-                                    {% elsif childlink.links == blank  and link.type == 'blog_link' %}
-                                        <div class="col-for-blog">
-
-                                            {% for blog in blogs %}
-                                                {% if article.image %}
-
-                                                {% endif %}
-                                            {% endfor %}
-                                        </div>
 
                                     {% else %}
 

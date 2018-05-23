@@ -123,11 +123,11 @@
                     {% elsif link.type == 'catalog_link' %}
 
                     <div class="container-collection">
-                        {% for product in collections.sale.products %}
+                        {% for product in collections.sale.products limit:3 %}
                             <div class="product">
                                 <div class="product-img">
                                     <a href="{{ product.url | within: collection }}" class="product-url">
-                                        <img class="product-img" src="{{ product.featured_image | product_img_url: 'large' }}" alt="{{ product.title | escape }}"/>
+                                        <img class="product-img" src="{{ product.featured_image | product_img_url: 'grande' }}" alt="{{ product.title | escape }}"/>
                                     </a>
                                 </div>
                                 <div class="product-name">

@@ -41,8 +41,11 @@
 
   {% include 'social-meta-tags' %}
 
+  <!- my files ->
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
   {{ 'header.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'collection.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'custom-layout.scss.css' | asset_url | stylesheet_tag }}
   {{ 'custom.js' | asset_url | script_tag }}
   {% include 'google-fonts' %}
 
@@ -110,10 +113,14 @@
 
   {% section 'header' %}
 
+  <! CONTENT >
+
   <div class="page-container" id="PageContainer">
 
     <main class="main-content" id="MainContent" role="main">
-      {{ content_for_layout }}
+
+        {{ content_for_layout }}
+
     </main>
 
     {% section 'footer' %}

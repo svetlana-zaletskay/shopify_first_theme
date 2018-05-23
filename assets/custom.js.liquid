@@ -19,5 +19,9 @@ jQuery(document).ready(function () {
         if ($(container) && $(container).hasClass('only-one-level')) {
             $(this).toggleClass('small-menu');
         }
-    })
+    });
+    $('.blog-content > p').each(function () {
+        if ($(this).text().length > 50)
+            $(this).text($(this).text().substring(0, 50) + '...');
+    });
 })

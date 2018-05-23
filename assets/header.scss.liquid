@@ -74,6 +74,9 @@ button {
 }
 
 /*=============== HEADER SECTION ==============*/
+.site-header {
+  padding: 0;
+}
 .site-nav__link {
   text-transform: uppercase;
   @include baseLink;
@@ -174,7 +177,8 @@ nav.main-navigation {
   position: relative;
   border-bottom: none;
 }
-.small-menu{
+
+.small-menu {
   position: relative;
   @include text-align(left);
 }
@@ -194,10 +198,13 @@ nav.main-navigation {
       &:hover {
         .container-level-1 {
           display: block;
-          &.only-one-level{
+          &.only-one-level {
             min-width: 140px;
             padding: 20px 20px;
           }
+        }
+        .container-collection {
+          display: block;
         }
       }
     }
@@ -229,7 +236,7 @@ nav.main-navigation {
         }
       }
       .nav-dropdown {
-          width: auto;
+        width: auto;
       }
     }
   }
@@ -251,6 +258,62 @@ nav.main-navigation {
     padding: 0;
     &:hover {
       color: $colorTitle;
+    }
+  }
+
+  //blog
+  .col-blog {
+    width: 33.33%;
+    float: left;
+    padding: 0 15px;
+  }
+  .blog-info {
+    @include text-align(left);
+  }
+  .blog-button {
+    @include text-align(left);
+    margin-top: 15px;
+    .link-read-more {
+      padding: 0;
+      .read-more {
+        color: $colorLinkHover;
+        font-size: 14px;
+        &:hover {
+          color: #263238;
+          @include transition(all 0.3s ease-in-out)
+        }
+      }
+    }
+  }
+  //collection
+  .container-collection {
+    display: none;
+    position: absolute;
+    top: 54px;
+    left: 0;
+    border: 1px solid #e1e1e1;
+    background: #f4f4f4;
+    z-index: 1;
+    width: 100%;
+    padding: 42px 23px;
+    @include transition(all .9s linear);
+    .product {
+      width: 33%;
+      float: left;
+      padding: 0 15px;
+      .product-url {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+      }
+      .product-name {
+        @include text-align(center);
+      }
+      .product-price {
+        font-weight: 700;
+        color: #263238;
+        font-size: 20px;
+      }
     }
   }
 }

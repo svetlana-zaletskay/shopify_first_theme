@@ -21,37 +21,9 @@
             {% endif %}
         {% endif %}
 
-        {% if link.links == blank %}
-            <li class="navigation-link">
-                <a href="{{ link.url }}" class="link-main">{{ link.title }}</a>
-            </li>
-        {% endif %}
-
-
         {% if link.links != blank %}
             <li class="navigation-link nav-has-dropdown{% if three_level_nav %}{% endif %}{% if link.active %}{% endif %}">
                 <a href="{{ link.url }}" class="link-main">{{ link.title }}</a>
-
-                {% if link.type == 'blog_link' %}
-                    <div class="container-level-1">
-                        {% for article in blogs.news.articles %}
-                            <div class="container-blog">
-                                <div class="col-blog">
-                                    <img src="{{ article.image.src | img_url: 'medium'}}"/>
-                                    <div>
-                                        {{ article.title }}
-                                    </div>
-                                    <div>
-                                        {{ article.content }}
-                                    </div>
-                                    <div>
-                                        <a href="{{ article.url }}">XXX</a>
-                                    </div>
-                                </div>
-                            </div>
-                        {% endfor %}
-                    </div>
-                {% else %}
 
                 {% comment %} if link has dropdown {% endcomment %}
 
@@ -115,138 +87,64 @@
 
                     </ul>
                 </div>
+            </li>
+
+        {% else %}
+            {%- assign customPointWithSubmenu = false -%}
+            {% if link.type == 'blog_link' %}
+                {%- assign customPointWithSubmenu = true -%}
+                {% elsif link.type == 'catalog_link' %}
+                {%- assign customPointWithSubmenu = true -%}
+            {% endif %}
+
+            <li class="navigation-link {% if customPointWithSubmenu %}nav-has-dropdown{% endif %}">
+                <a href="{{ link.url }}" class="link-main">{{ link.title }}</a>
+
+                {% if link.type == 'blog_link' %}
+                    <div class="container-level-1">
+                        {% for article in blogs.news.articles %}
+                            <div class="container-blog">
+                                <div class="col-blog">
+                                    <div class="blog-img">
+                                        <img src="{{ article.image.src | img_url: 'large' }}"/>
+                                    </div>
+                                    <div class="blog-info">
+                                        <a href="{{ article.url }}">
+                                            <div class="blog-name">{{ article.title }}</div>
+                                        </a>
+                                        <div class="blog-content">{{ article.content }}</div>
+                                        <div class="blog-button"><a class="link-read-more" href="{{ article.url }}"><span class="read-more">Read more</span></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    {% elsif link.type == 'catalog_link' %}
+
+                    <div class="container-collection">
+                        {% for product in collections.sale.products %}
+                            <div class="product">
+                                <div class="product-img">
+                                    <a href="{{ product.url | within: collection }}" class="product-url">
+                                        <img class="product-img" src="{{ product.featured_image | product_img_url: 'large' }}" alt="{{ product.title | escape }}"/>
+                                    </a>
+                                </div>
+                                <div class="product-name">
+                                    <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+                                </div>
+                                <div class="product-price">
+                                    {% include 'product-price' %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+
                 {% endif %}
             </li>
+
+
         {% endif %}
 
     {% endfor %}
 </ul>
-
-
-{% comment %} CUSTOM STRUCTURE
-    <li{% if link.active %} class="site-nav--active"{% endif %}>
-        <a href="{{ link.url }}" class="site-nav__link site-nav__link--main"{% if link.active %} aria-current="page"{% endif %}>{{ link.title }}</a>
-    </li>
-    <li class="site-nav--has-dropdown{% if three_level_nav %} site-nav--has-centered-dropdown{% endif %}{% if link.active %} site-nav--active{% endif %}">
-        <button class="site-nav__link site-nav__link--main site-nav__link--button"{% if link.active %} aria-current="page"{% endif %} type="button" aria-haspopup="true" aria-expanded="false"
-                aria-controls="SiteNavLabel-{{ child_list_handle }}">
-            {{ link.title }}
-            {% include 'icon-chevron-down' %}
-        </button>
-
-        <div class="site-nav__dropdown{% if three_level_nav %} site-nav__dropdown--centered{% endif %}" id="SiteNavLabel-{{ child_list_handle }}">
-            {% if three_level_nav %}
-                <div class="site-nav__childlist">
-                    <ul class="site-nav__childlist-grid">
-                        {% if link.links != blank %}
-                            {% for childlink in link.links %}
-                                <li class="site-nav__childlist-item">
-
-                                    <div class="eeee">
-
-                                        <h2 class="xxx">{{ childlink.title | downcase }}</h2>
-
-
-                                        {% comment %}<a href="{{ childlink.url }}"
-                                                        class="site-nav__link site-nav__child-link site-nav__child-link--parent"{% if childlink.active %} aria-current="page"{% endif %}>
-                                            {{ childlink.title | downcase }}
-                                            </a>{% endcomment %}
-
-
-                                        {% if childlink.links != blank %}
-                                            <ul>
-                                                {% for grandchildlink in childlink.links %}
-                                                    <li>
-                                                        <a href="{{ grandchildlink.url }}" class="site-nav__link site-nav__child-link"{% if grandchildlink.active %} aria-current="page"{% endif %}>
-                                                            {{ grandchildlink.title | escape }}
-                                                        </a>
-                                                    </li>
-                                                {% endfor %}
-                                            </ul>
-                                        {% endif %}
-                                    </div>
-
-                                </li>
-                            {% endfor %}
-                        {% endif %}
-                    </ul>
-                </div>
-
-            {% else %}
-                <ul>
-                    {% for childlink in link.links %}
-                        <li {% if childlink.active %}class="site-nav--active"{% endif %}>
-                            <a href="{{ childlink.url }}"
-                               class="site-nav__link site-nav__child-link{% if forloop.last %} site-nav__link--last{% endif %}"{% if childlink.active %} aria-current="page"{% endif %}>
-                                {{ childlink.title | escape }}
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        </div>
-    </li>
-
-{% endcomment %}
-
-{% comment %} MY STRUCTURE
-    {% if link.links != blank %}
-        <li class="navigation-link nav-has-dropdown{% if three_level_nav %}{% endif %}{% if link.active %}{% endif %}">
-            <a href="{{ link.url }}" class="link-main">{{ link.title }}</a>
-            {% comment %} if link has dropdown {% endcomment %}
-            <div class="container-level-1">
-                {% if three_level_nav %}
-                <ul class="drop-level-1">
-                    {% if link.links != blank %}
-                        {% for childlink in link.links %}
-                            <li class="col-in-drop-level-1">
-
-                                <h2 class="header-links-in-level-1">{{ childlink.title | downcase }}</h2>
-
-                                {% comment %}<a href="{{ childlink.url }}"
-                                                class=""{% if childlink.active %} aria-current="page"{% endif %}>
-                                    {{ childlink.title | downcase }}
-                                    </a>{% endcomment %}
-
-
-                                {% if childlink.links != blank %}
-                                    <ul>
-                                        {% for grandchildlink in childlink.links %}
-                                            <li class="link-in-level-1">
-                                                <a href="{{ grandchildlink.url }}"
-                                                   class="link-to-page" {% if grandchildlink.active %} aria-current="page"{% endif %}>
-                                                    {{ grandchildlink.title | escape }}
-                                                </a>
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
-                            </li>
-                        {% endfor %}
-
-                        {% if link.levels == 1 %}
-                            {%- assign three_level_nav = true -%}
-
-                        {% endif %}
-
-                    {% endif %}
-
-                    {% else %}
-                        <ul>
-                            {% for childlink in link.links %}
-                                <li {% if childlink.active %}class="site-nav--active"{% endif %}>
-                                    <a href="{{ childlink.url }}"
-                                       class="site-nav__link site-nav__child-link{% if forloop.last %} site-nav__link--last{% endif %}"{% if childlink.active %} aria-current="page"{% endif %}>
-                                        {{ childlink.title | escape }}
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-
-                </ul>
-            </div>
-        </li>
-    {% endif %}
-
-{% endcomment %}

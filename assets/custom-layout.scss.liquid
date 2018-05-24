@@ -1,3 +1,55 @@
-.page-heading {
+/*=============== CUSTOM VARIABLES ==============*/
+$bgBreadcrambs: #bfa588;
 
+/*=============== CUSTOM MIXINS ==============*/
+
+//properties
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+.breadcrumb {
+  margin-bottom: 0;
+  background: $bgBreadcrambs;
+  @include border-radius(0);
+
+  li {
+    display: inline-block;
+    font-size: 14px;
+    &:last-child {
+      color: #fff;
+    }
+  }
+  .breadcrumb-arrow {
+    padding: 0 6px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    opacity: .5;
+  }
+  a {
+    color: #fff;
+    opacity: .5;
+    @include transition(all 0.3s ease-in-out);
+    &:hover {
+      opacity: 1;
+
+    }
+  }
+}
+.main-content {
+  padding: 0;
+}
+.page-header {
+  border: none;
+  margin: 40px 0 0 0;
 }

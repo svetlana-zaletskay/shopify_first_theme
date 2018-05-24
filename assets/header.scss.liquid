@@ -10,6 +10,8 @@ $borderColor: #e1e1e1;
 $borderColorFocus: #999;
 $backgroundMegaMenu: #f4f4f4;
 
+
+
 /*=============== CUSTOM MIXINS ==============*/
 
 @mixin baseLink {
@@ -54,13 +56,19 @@ $backgroundMegaMenu: #f4f4f4;
 body {
   font-family: $fontFamily;
 }
-
+.container {
+  padding: 0;
+}
+.wrapper-page {
+  padding: 0 5px;
+}
 h2 {
   font-family: $fontFamily;
   color: $colorTitle;
   font-size: 24px;
   font-weight: 400;
   text-transform: capitalize;
+  letter-spacing: 0;
 }
 
 a {
@@ -189,10 +197,12 @@ nav.main-navigation {
   .link-main {
     text-transform: uppercase;
     padding: 0 10px;
+    letter-spacing: 0.04em;
   }
   .navigation-link {
     display: inline-block;
     min-height: 54px;
+    margin: 0 16px;
     @include transition(all .3s linear);
     &.nav-has-dropdown {
       &:hover {

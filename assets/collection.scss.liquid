@@ -1,4 +1,51 @@
-.collection-bg {
-  width: 100%;
-  height: 100%;
+$colorText: #263238;
+$colorTextGrey: #858586;
+$colorLinkHover: #bfa588;
+$fontSizeBase: 14px;
+
+
+//properties
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+.collection-grid-item {
+  margin-bottom: 110px;
+}
+.collection-grid-item__overlay {
+  &:hover {
+    opacity: .7;
+    @include transition(all 0.3s ease-in-out);
+  }
+}
+.collection-grid-item__link {
+  &:focus {
+    border: transparent;
+    outline: none;
+  }
+}
+.ln-container-collection-title {
+  text-align: center;
+
+}
+.ln-collection-title {
+  margin-top: 20px;
+  color: $colorTextGrey;
+  font-size: 18px;
+  @include transition(all 0.3s ease-in-out);
+  &:hover {
+    color: $colorLinkHover;
+  }
+}
+.quantity-products-in-collection {
+  text-align: center;
+  color: $colorTextGrey;
+  font-size: $fontSizeBase;
+  &:hover {
+    color: $colorTextGrey;
+  }
 }

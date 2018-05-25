@@ -29,8 +29,8 @@
         {% endif %}
         {% endunless %}
 
-        <div class="collection-grid-item__title-wrapper">
-            <h3 class="collection-grid-item__title">
+        <div class="ln-container-collection-title">
+            <h3 class="ln-collection-title">
                 {% if collection.title == blank %}
                     {{ 'homepage.onboarding.collection_title' | t }}
                 {% else %}
@@ -38,6 +38,6 @@
                 {% endif %}
             </h3>
         </div>
-        <span>{{ collection.products.size }} products</span>
+        <div class="quantity-products-in-collection">{{ collection.products.size }} products</div>
     </a>
 </div>

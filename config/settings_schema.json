@@ -439,9 +439,14 @@
             "group": "Serif | Google Web Fonts"
           },
           {
-            "value": "Arimo, sans-serif",
-            "label": "Arimo",
-            "group": "custom-fonts"
+            "value": "arimoregular",
+            "label": "Arimo Regular",
+            "group": "Custom-fonts"
+          },
+          {
+            "value": "arimobold",
+            "label": "Arimo Bold",
+            "group": "Custom-fonts"
           }
         ]
       },
@@ -702,9 +707,14 @@
             "group": "Serif | Google Web Fonts"
           },
           {
-            "value": "Arimo, sans-serif",
-            "label": "Arimo",
-            "group": "custom-fonts"
+            "value": "arimoregular",
+            "label": "Arimo Regular",
+            "group": "Custom-fonts"
+          },
+          {
+            "value": "arimobold",
+            "label": "Arimo Bold",
+            "group": "Custom-fonts"
           }
         ]
       },

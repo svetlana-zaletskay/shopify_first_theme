@@ -46,7 +46,7 @@
     {{ 'header.scss.css' | asset_url | stylesheet_tag }}
     {{ 'collection.scss.css' | asset_url | stylesheet_tag }}
     {{ 'custom-layout.scss.css' | asset_url | stylesheet_tag }}
-    {{ 'fontawesome-all.css' | asset_url | stylesheet_tag }}
+    {{ 'fonts.css' | asset_url | stylesheet_tag }}
     {{ 'custom.js' | asset_url | script_tag }}
     {% include 'google-fonts' %}
 
@@ -135,9 +135,9 @@
 
         </main>
 
-        {% section 'footer' %}
-
     </div>
+
+    {% section 'footer' %}
 </div>
 </body>
 </html>

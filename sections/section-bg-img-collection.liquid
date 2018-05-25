@@ -1,0 +1,48 @@
+<div id="section-cta">
+    <div class="container">
+        <h3> {{ section.settings.text-box }} </h3>
+        <a href="{{ section.settings.link }}" class="btn btn--cta">{{ section.settings.linktext }}</a>
+    </div>
+    <img src="{{ section.settings.bgImage | img_url: 'large' }}">
+</div>
+{% schema %}
+{
+    "name": "Background Color",
+    "settings": [
+{
+    "id": "text-box",
+    "type": "text",
+    "label": "Heading",
+    "default": "Title"
+},
+{
+    "id": "link",
+    "type": "url",
+    "label": "Button link"
+},
+{
+    "id": "linktext",
+    "type": "text",
+    "label": "Button text",
+    "default": "Click here"
+},
+{
+    "type": "image_picker",
+    "id": "bgImage",
+    "label": "Collection Background Image"
+}
+    ],
+    "presets": [
+{
+    "name": "Background Color",
+    "category": "CTA button"
+}
+    ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

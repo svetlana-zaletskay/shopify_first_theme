@@ -2,15 +2,14 @@
 $fontSizeBase: 16px;
 $fontSizeIcon: 28px;
 $fontSizeTitle: 24px;
-$fontFamily: Arimo, sans-serif;
+$fontFamilyRegular: 'arimoregular';
+$fontFamilyBold: 'arimobold';
 $colorTitle: #263238;
 $colorLinkHover: #bfa588;
 $activeColorItem: #bfa588;
 $borderColor: #e1e1e1;
 $borderColorFocus: #999;
 $backgroundMegaMenu: #f4f4f4;
-
-
 
 /*=============== CUSTOM MIXINS ==============*/
 
@@ -52,12 +51,21 @@ $backgroundMegaMenu: #f4f4f4;
   -moz-text-align: $value;
   text-align: $value;
 }
+
 .container {
   padding: 0;
 }
+
 .wrapper-page {
   padding: 0 5px;
 }
+
+
+body {
+  font-family: $fontFamilyRegular;
+  line-height: 21px;
+}
+
 h2 {
   text-transform: capitalize;
   letter-spacing: 0;
@@ -77,6 +85,7 @@ button {
 .site-header {
   padding: 0;
 }
+
 .site-nav__link {
   text-transform: uppercase;
   @include baseLink;

@@ -123,7 +123,7 @@
                     {% elsif link.title == 'Sale' %}
 
                     <div class="container-collection">
-                        {% for product in collections.sale-products.products limit:3 %}
+                        {% for product in collections.sale.products limit:3 %}
                             <div class="product">
                                 <div class="product-img">
                                     <a href="{{ product.url | within: collection }}" class="product-url">

@@ -1,4 +1,9 @@
-<div class="product-template__container page-width" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true">
+<div class="product-template__container page-width" 
+  id="ProductSection-{{ section.id }}" 
+  data-section-id="{{ section.id }}" 
+  data-section-type="product" 
+  data-enable-history-state="true"
+>
   {% comment %}
     Get first variant, or deep linked one
   {% endcomment %}
@@ -182,6 +187,14 @@
             </div>
           {% endform %}
         </div>
+
+        {%- comment -%}
+          Live region for announcing updated price and availability to screen readers
+        {%- endcomment -%}
+        <p class="visually-hidden" data-product-status
+          aria-live="polite"
+          role="status"
+        ></p>
 
         <div class="product-single__description rte">
           {{ product.description }}

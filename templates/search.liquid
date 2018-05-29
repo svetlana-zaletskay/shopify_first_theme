@@ -1,13 +1,13 @@
 {% paginate search.results by 10 %}
 
 <div class="page-width">
-  {% if search.results_count == 0 or search.performed == false %}
-    <div class="empty-page-content text-center">
+  {% if search.performed == false %}
+    <div class="text-center">
       <h1 class="h2">{{ 'general.search.title' | t }}</h1>
   {% else %}
     <div class="section-header text-center">
       <h1 class="h2">
-        <span class="visuallyhidden">{{ 'general.search.heading' | t: count: search.results_count }}:</span>
+        <span class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}:</span>
         {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
       </h1>
   {% endif %}
@@ -31,8 +31,10 @@
         </div>
 
         {% if search.performed and search.results_count == 0 %}
-          <hr class="hr--small hr--invisible">
-          <p>{{ 'general.search.no_results_html' | t: terms: search.terms }}</p>
+          <hr class="hr--small hr--invisible" aria-hidden="true" />
+          <div class="rte">
+            <p>{{ 'general.search.no_results_html' | t: terms: search.terms }}</p>
+          </div>
         {% endif %}
   </div>
 </div>
@@ -40,7 +42,7 @@
 
 {% if search.performed %}
   {% if search.results_count > 0 %}
-    <hr aria-hidden="true">
+    <hr aria-hidden="true" />
   {% endif %}
   <h2 class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}</h2>
   <ul class="page-width list-view-items">

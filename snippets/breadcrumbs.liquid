@@ -5,7 +5,7 @@
                 <li><a href="/" title="Home">Home</a></li>
             {% if template contains 'page' %}
                 <span aria-hidden="true" class="breadcrumb-arrow">&rsaquo;</span>
-                <li>{{ page.title }}</li>
+                <li >{{ page.title }}</li>
                 {% elsif template contains 'product' %}
                 {% if collection.url %}
                     <span aria-hidden="true" class="breadcrumb-arrow">&rsaquo;</span>
@@ -28,9 +28,9 @@
                 {% if current_tags %}
                     {{ blog.title | link_to: blog.url }}
                     <span aria-hidden="true" class="breadcrumb-arrow">&rsaquo;</span>
-                    <li>{{ current_tags | join: " + " }}</>
+                    <li>{{ current_tags | join: " + " }}</li>
                 {% else %}
-                    <span>{{ blog.title }}</span>
+                    <li>{{ blog.title }}</li>
                 {% endif %}
                 {% elsif template == 'article' %}
                 <span aria-hidden="true" class="breadcrumb-arrow">&rsaquo;</span>

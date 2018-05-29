@@ -236,6 +236,14 @@
           {% endif %}
         </div>
 
+        {%- comment -%}
+          Live region for announcing updated price and availability to screen readers
+        {%- endcomment -%}
+        <p class="visually-hidden" data-product-status
+          aria-live="polite"
+          role="status"
+        ></p>
+
         <div class="product-single__description rte" itemprop="description">
           {% unless product == empty %}
             {{ product.description }}

@@ -5,7 +5,7 @@
         <h2 class="h2">{{ section.settings.section_title | escape }}</h2>
       {% endif %}
       {% if section.settings.subheading != blank %}
-        <p>{{ section.settings.subheading | escape }}</p>
+        <div class="rte">{{ section.settings.subheading }}</div>
       {% endif %}
     </div>
     {% form 'customer' %}
@@ -66,7 +66,7 @@
         }
       },
       {
-        "type": "text",
+        "type": "richtext",
         "id": "subheading",
         "label": {
           "en": "Subheading",
@@ -74,9 +74,9 @@
           "fr": "Sous-titre"
         },
         "default": {
-          "en": "A short sentence describing what someone will receive by subscribing",
-          "de": "Eine kurze Beschreibung zum Inhalt des Newsletters",
-          "fr": "Petite phrase qui décrit ce qu'on reçoit en s'inscrivant"
+          "en": "<p>A short sentence describing what someone will receive by subscribing</p>",
+          "de": "<p>Eine kurze Beschreibung zum Inhalt des Newsletters</p>",
+          "fr": "<p>Petite phrase qui décrit ce qu'on reçoit en s'inscrivant</p>"
         }
       },
       {

@@ -93,13 +93,12 @@
             {%- assign customPointWithSubmenu = false -%}
             {% if link.type == 'blog_link' %}
                 {%- assign customPointWithSubmenu = true -%}
-                {% elsif link.type == 'catalog_link' %}
+            {% elsif link.title == 'Sale' %}
                 {%- assign customPointWithSubmenu = true -%}
             {% endif %}
 
             <li class="navigation-link {% if customPointWithSubmenu %}nav-has-dropdown{% endif %}">
                 <a href="{{ link.url }}" class="link-main">{{ link.title }}</a>
-
                 {% if link.type == 'blog_link' %}
                     <div class="container-level-1">
                         {% for article in blogs.news.articles %}
@@ -120,7 +119,8 @@
                         {% endfor %}
                     </div>
 
-                    {% elsif link.type == 'catalog_link' %}
+
+                    {% elsif link.title == 'Sale' %}
 
                     <div class="container-collection">
                         {% for product in collections.sale-products.products limit:3 %}

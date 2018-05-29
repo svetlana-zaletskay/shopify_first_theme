@@ -19,8 +19,8 @@
       "link": "買い物を続ける"
     },
     "pagination": {
-      "previous": "前",
-      "next": "次",
+      "previous": "前のページ",
+      "next": "次のページ",
       "current_page": "ページ： {{ current }} \/ {{ total }}"
     },
     "password_page": {
@@ -95,11 +95,14 @@
   "blogs": {
     "article": {
       "view_all": "すべてを見る",
+      "view_all_blogs": "すべての記事を見る",
       "all_topics": "すべてのトピック",
       "by_author": "by {{ author }}",
       "posted_in": "カテゴリー : ",
       "read_more": "続きを読む",
-      "back_to_blog": "{{ title }}に戻る"
+      "read_more_title": "続きを読む: {{ title }}",
+      "back_to_blog": "{{ title }}に戻る",
+      "tags": "タグ"
     },
     "comments": {
       "title": "コメントを残す",

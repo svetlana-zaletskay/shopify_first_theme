@@ -38,6 +38,29 @@
   @return ($value / ($value * 0 + 1));
 }
 
+/*============================================================================
+  Return a color based on the brightness of an existing color.
+  Need to pass in brightness because it is calculated with Liquid.
+  @param {Number} $brightness
+  @param {String} $color
+  @example scss - Usage
+    $focusColor: adaptiveColor(#000, 0);
+  @example css - CSS Output
+    $focusColor: #404040;
+  @return {String}
+==============================================================================*/
+
+@function adaptiveColor($color, $brightness) {
+  @if $brightness <= 26 {
+    @return lighten($color, 25%)
+  }
+  @if $brightness <= 64 {
+    @return lighten($color, 15%)
+  } @else {
+    @return darken($color, 10%)
+  }
+}
+
 /*================ #Mixins ================*/
 @mixin clearfix() {
   &::after {
@@ -304,7 +327,7 @@ $grid-breakpoint-has-push: ($small, $medium-up);
 
 // Text colors
 $color-text: {{ settings.color_text }};
-$color-text-shadow: rgba(0, 0, 0, 0.1);
+$color-text-shadow: rgba(0,0,0,0.4);
 $color-body-text: {{ settings.color_body_text }};
 $color-sale-text: {{ settings.color_sale_text }};
 $color-small-button: {{ settings.color_small_button }};
@@ -316,6 +339,12 @@ $color-navigation-text: {{ settings.color_text }};
 // Button colors
 $color-btn-primary: {{ settings.color_button }};
 $color-btn-primary-text: {{ settings.color_button_text }};
+
+// Hover and focus states
+$color-text-focus: adaptiveColor({{ settings.color_text }}, {{ settings.color_text | color_brightness }});
+$color-overlay-text-focus: adaptiveColor({{ settings.color_image_overlay_text }}, {{ settings.color_image_overlay_text | color_brightness }});
+$color-btn-primary-focus: adaptiveColor({{ settings.color_button }}, {{ settings.color_button | color_brightness }});
+$color-small-button-focus: adaptiveColor({{ settings.color_small_button }}, {{ settings.color_small_button | color_brightness }});
 
 // Link buttons and secondary cta
 $color-link: $color-body-text;
@@ -380,10 +409,6 @@ $svg-select-icon: #{'{{ "ico-select.svg" | asset_url }}'};
 
 /*================ Drawers ================*/
 $transition-drawer: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
-
-/*================ Hero ================*/
-$color-background-hero-button: #fff;
-$color-text-hero-button: #000;
 
 /*================ Hero Slider ================*/
 $color-slideshow-arrows: #000;
@@ -1477,7 +1502,8 @@ li {
 /*================ Hero and slideshow headers ================*/
 .mega-title,
 .mega-subtitle {
-  text-shadow: 0 0 15px $color-text-shadow;
+  color: $color-overlay-title-text;
+  text-shadow: 0 0 4px $color-text-shadow;
 }
 
 .mega-title {
@@ -1500,7 +1526,17 @@ li {
   }
 
   p {
-    color: inherit;
+    color: $color-overlay-title-text;
+  }
+
+  a {
+    color: $color-overlay-title-text;
+    border-bottom: 1px solid currentColor;
+
+    &:hover,
+    &:focus {
+      color: $color-overlay-text-focus;
+    }
   }
 }
 
@@ -1689,7 +1725,7 @@ a {
 
   &:hover,
   &:focus {
-    opacity: $opacity-link-hover;
+    color: $color-text-focus;
   }
 
   &.classic-link {
@@ -1729,7 +1765,8 @@ a[href^="tel"] {
 
   &:hover,
   &:focus {
-    opacity: $opacity-link-hover;
+    color: $color-btn-primary-text;
+    background-color: $color-btn-primary-focus;
   }
 
   .icon-arrow-right,
@@ -1748,13 +1785,26 @@ a[href^="tel"] {
 .btn--secondary {
   background-color: $color-small-button;
   color: $color-small-button-text;
-  border-color: $color-border-form;
+  border: none;
+
+  &:hover,
+  &:focus {
+    color: $color-small-button-text;
+    background-color: $color-small-button-focus;
+  }
 }
 
 .btn--secondary-accent {
   background-color: $color-body;
   color: $color-btn-primary;
   border-color: $color-btn-primary;
+
+  &:hover,
+  &:focus {
+    background-color:$color-body;
+    color: $color-btn-primary-focus;
+    border-color: $color-btn-primary-focus;
+  }
 }
 
 .btn--small {
@@ -1781,7 +1831,7 @@ a[href^="tel"] {
 
   &:hover,
   &:focus {
-    opacity: $opacity-link-hover;
+    color: $color-text-focus;
   }
 
   .icon {
@@ -2314,6 +2364,11 @@ textarea {
 
   @include media-query($medium-down) {
     font-size: $font-size-base;
+  }
+
+  &:focus,
+  &:hover {
+    color: $color-text-focus;
   }
 }
 
@@ -3068,6 +3123,10 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
 .password__form-heading {
   margin-bottom: $gutter-site;
+
+  & + .password__form-subheading {
+    margin-top: -25px;
+  }
 }
 
 .password-powered-by {
@@ -3227,7 +3286,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
     margin-bottom: 10px;
 
     &:hover {
-      background-color: $color-btn-primary !important;
+      background-color: $color-btn-primary-focus !important;
     }
   }
 
@@ -3885,7 +3944,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   }
 
   .site-header__account {
-    right: 50px;
+    right: calc(44em / 16);
   }
 }
 
@@ -3925,7 +3984,8 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
 @include media-query($small) {
   .site-header__cart-count {
-    top: calc(14em / 16);
+    top: calc(7em / 16);
+    right: 0;
     border-radius: 50%;
     min-width: calc(19em / 16);
     height: calc(19em / 16);
@@ -3942,12 +4002,9 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   display: none;
 }
 
-.site-header .icon-search,
-.site-header .icon-hamburger,
-.site-header .icon-close,
-.site-header .icon-cart {
-  height: 1.8em;
-  width: 1.2em;
+.site-header__icon svg {
+  height: calc(20em / 16);
+  width: calc(20em / 16);
 
   @include media-query($medium-up) {
     margin-right: 3px;
@@ -3964,18 +4021,11 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
     padding-right: $gutter-site-mobile;
   }
 
-  .site-header__menu,
-  .site-header__search-toggle,
-  .site-header__cart,
-  .site-header__account {
+  .site-header__icon {
     display: inline-block;
     vertical-align: middle;
-    padding: 1.1em;
+    padding: calc(12em / 16);
     margin: 0;
-
-    .site-header__icons--plus & {
-      padding: 18px 6px;
-    }
   }
 
   .site-header__logo {
@@ -3987,6 +4037,16 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   }
 }
 
+/*
+* Smaller screens do not have enough room for 44x44 px touch target
+* When there are 4 icons, reduce the padding
+*/
+@media screen and (max-width: 360px) {
+  .site-header__icons--plus .site-header__icon {
+    padding: calc(12em / 16) calc(6em / 16);
+  }
+}
+
 .article--listing {
   padding-top: $gutter-site;
   margin-bottom: $gutter-site;
@@ -3994,6 +4054,12 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
 .article__title {
   margin-bottom: $gutter-site-mobile / 2;
+}
+
+.article__title--has-image {
+  @include media-query($small) {
+    padding-left: $gutter-site-mobile;
+  }
 }
 
 .article__author {
@@ -4016,6 +4082,15 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
 .article__tags--list {
   font-style: italic;
+}
+
+.article__link {
+  display: inline-block;
+
+  @include media-query($small) {
+    @include display-flexbox;
+    @include flex-direction(column);
+  }
 }
 
 /*============================================================================
@@ -4174,7 +4249,6 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
 .social-sharing {
   display: flex;
-
   .template-password & {
     justify-content: center;
   }
@@ -4293,7 +4367,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   effects the :hover style. This forces the style to be applied.
 ==============================================================================*/
 .search-header__input:hover + .btn--link {
-  opacity: $opacity-link-hover;
+  color: $color-text-focus;
 }
 
 /*================ Mobile Search Bar ================*/
@@ -5015,14 +5089,6 @@ $color-slideshow-close-text: #000;
   }
 }
 
-.product-price {
-  display: flex;
-  flex-wrap: wrap;
-
-  dd {
-    margin: 0 0.5em 0 0;
-  }
-}
 .product-price__price {
   font-weight: $font-weight-header;
 }
@@ -5190,6 +5256,11 @@ $toolbar-height-small: 46px;
   @include media-query($medium-up) {
     margin: $section-spacing 0 0;
     max-width: none;
+  }
+
+  & .rte {
+    font-size: em($font-size-base - 2);
+    margin-bottom: 25px;
   }
 }
 
@@ -5397,13 +5468,10 @@ $toolbar-height-small: 46px;
   display: table-cell;
   vertical-align: middle;
   padding: $section-spacing 0;
-  color: $color-overlay-title-text;
   z-index: 2;
 }
 
 .hero__btn {
-  background-color: $color-background-hero-button;
-  color: $color-text-hero-button;
   margin-top: $section-spacing / 2;
 }
 
@@ -5771,6 +5839,7 @@ $toolbar-height-small: 46px;
   transition: $transition-link-hover;
   width: 100%;
   text-align: center;
+  text-shadow: 0 0 4px $color-text-shadow;
 }
 
 .collection-grid {
@@ -5798,7 +5867,7 @@ $toolbar-height-small: 46px;
   padding: 0 5px;
   @include transform(translateY(-50%));
   transition: $transition-link-hover;
-  text-shadow: 0 0 15px $color-text-shadow;
+  text-shadow: 0 0 4px $color-text-shadow;
 
   @if $font-bold-titles {
     font-weight: $font-weight-bold;
@@ -5987,12 +6056,21 @@ $toolbar-height-small: 46px;
   dd {
     margin: 0 0.5em 0 0;
   }
+}
 
-  .product-price {
-    margin-top: 0.5em;
+.product-card__description {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.5em;
+
+  dd {
+    margin: 0 0.5em 0 0;
   }
 }
 
+.product-card__vendor {
+  flex-basis: 100%;
+}
 .product-card__link {
   position: absolute;
   top: 0;
@@ -6001,5 +6079,4 @@ $toolbar-height-small: 46px;
   left: 0;
   z-index: 2;
 }
-
 

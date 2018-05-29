@@ -26,27 +26,21 @@
                 {% if link.links != blank %}
                   {% for childlink in link.links %}
                     <li class="site-nav__childlist-item">
+                      <a href="{{ childlink.url }}" class="site-nav__link site-nav__child-link site-nav__child-link--parent"{% if childlink.active %} aria-current="page"{% endif %}>
+                        {{ childlink.title | escape }}
+                      </a>
 
-                        <div class="eeee">
-
-                            <h2 class="xxx">{{ childlink.title | downcase }}</h2>
-
-                            /*<a href="{{ childlink.url }}" class="site-nav__link site-nav__child-link site-nav__child-link--parent"{% if childlink.active %} aria-current="page"{% endif %}>
-                            {{ childlink.title | downcase }}
-                          </a>*/
-
-                          {% if childlink.links != blank %}
-                            <ul>
-                            {% for grandchildlink in childlink.links %}
-                              <li>
-                                <a href="{{ grandchildlink.url }}" class="site-nav__link site-nav__child-link"{% if grandchildlink.active %} aria-current="page"{% endif %}>
-                                  {{ grandchildlink.title | escape }}
-                                </a>
-                              </li>
-                            {% endfor %}
-                            </ul>
-                          {% endif %}
-                        </div>
+                      {% if childlink.links != blank %}
+                        <ul>
+                        {% for grandchildlink in childlink.links %}
+                          <li>
+                            <a href="{{ grandchildlink.url }}" class="site-nav__link site-nav__child-link"{% if grandchildlink.active %} aria-current="page"{% endif %}>
+                              {{ grandchildlink.title | escape }}
+                            </a>
+                          </li>
+                        {% endfor %}
+                        </ul>
+                      {% endif %}
 
                     </li>
                   {% endfor %}

@@ -19,8 +19,8 @@
       "link": "Continue shopping"
     },
     "pagination": {
-      "previous": "Previous",
-      "next": "Next",
+      "previous": "Previous page",
+      "next": "Next page",
       "current_page": "Page {{ current }} of {{ total }}"
     },
     "password_page": {
@@ -46,7 +46,7 @@
       }
     },
     "search": {
-      "no_results_html": "Your search for \"{{ terms }}\" did not yield any results.",
+      "no_results_html": "Please try a different search term or go back to the <a href=\"\/\">homepage<\/a>.",
       "results_with_count": {
         "one": "{{ count }} result for \"{{ terms }}\"",
         "other": "{{ count }} results for \"{{ terms }}\""
@@ -95,11 +95,14 @@
   "blogs": {
     "article": {
       "view_all": "View all",
+      "view_all_blogs": "View all blogs",
       "all_topics": "All topics",
       "by_author": "by {{ author }}",
       "posted_in": "Posted in",
       "read_more": "Read more",
-      "back_to_blog": "Back to {{ title }}"
+      "read_more_title": "Read more: {{ title }}",
+      "back_to_blog": "Back to {{ title }}",
+      "tags": "Tags"
     },
     "comments": {
       "title": "Leave a comment",

@@ -8,7 +8,7 @@ $grid-large: 990px;
 $grid-widescreen: 1400px;
 $grid-gutter: 30px;
 $grid-gutter-mobile: 22px;
-$bgMain: #000;
+
 $small: 'small';
 $medium: 'medium';
 $medium-down: 'medium-down';
@@ -30,7 +30,7 @@ $grid-breakpoint-has-push: ($small, $medium-up);
 
 // Text colors
 $color-text: {{ settings.color_text }};
-$color-text-shadow: rgba(0, 0, 0, 0.1);
+$color-text-shadow: rgba(0,0,0,0.4);
 $color-body-text: {{ settings.color_body_text }};
 $color-sale-text: {{ settings.color_sale_text }};
 $color-small-button: {{ settings.color_small_button }};
@@ -42,6 +42,12 @@ $color-navigation-text: {{ settings.color_text }};
 // Button colors
 $color-btn-primary: {{ settings.color_button }};
 $color-btn-primary-text: {{ settings.color_button_text }};
+
+// Hover and focus states
+$color-text-focus: adaptiveColor({{ settings.color_text }}, {{ settings.color_text | color_brightness }});
+$color-overlay-text-focus: adaptiveColor({{ settings.color_image_overlay_text }}, {{ settings.color_image_overlay_text | color_brightness }});
+$color-btn-primary-focus: adaptiveColor({{ settings.color_button }}, {{ settings.color_button | color_brightness }});
+$color-small-button-focus: adaptiveColor({{ settings.color_small_button }}, {{ settings.color_small_button | color_brightness }});
 
 // Link buttons and secondary cta
 $color-link: $color-body-text;
@@ -106,10 +112,6 @@ $svg-select-icon: #{'{{ "ico-select.svg" | asset_url }}'};
 
 /*================ Drawers ================*/
 $transition-drawer: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
-
-/*================ Hero ================*/
-$color-background-hero-button: #fff;
-$color-text-hero-button: #000;
 
 /*================ Hero Slider ================*/
 $color-slideshow-arrows: #000;

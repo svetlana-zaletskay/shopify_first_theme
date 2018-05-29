@@ -116,6 +116,23 @@ theme.Sections.prototype = _.assignIn({}, theme.Sections.prototype, {
 window.slate = window.slate || {};
 
 /**
+ * Slate utilities
+ * -----------------------------------------------------------------------------
+ * A collection of useful utilities to help build your theme
+ *
+ *
+ * @namespace utils
+ */
+
+slate.utils = {
+  keyboardKeys: {
+    TAB: 9
+  }
+};
+
+window.slate = window.slate || {};
+
+/**
  * iFrames
  * -----------------------------------------------------------------------------
  * Wrap videos in div to force responsive layout.
@@ -229,12 +246,50 @@ slate.a11y = {
    * @param {string} options.namespace - Namespace used for new focus event handler
    */
   trapFocus: function(options) {
-    var eventName = options.namespace
-      ? 'focusin.' + options.namespace
-      : 'focusin';
+    var eventsName = {
+      focusin: options.namespace ? 'focusin.' + options.namespace : 'focusin',
+      focusout: options.namespace
+        ? 'focusout.' + options.namespace
+        : 'focusout',
+      keydown: options.namespace
+        ? 'keydown.' + options.namespace
+        : 'keydown.handleFocus'
+    };
+
+    /**
+     * Get every possible visible focusable element
+     */
+    var $focusableElements = options.$container.find(
+      $(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex^="-"])'
+      ).filter(':visible')
+    );
+    var firstFocusable = $focusableElements[0];
+    var lastFocusable = $focusableElements[$focusableElements.length - 1];
 
     if (!options.$elementToFocus) {
       options.$elementToFocus = options.$container;
+    }
+
+    function _manageFocus(evt) {
+      if (evt.keyCode !== slate.utils.keyboardKeys.TAB) return;
+
+      /**
+       * On the last focusable element and tab forward,
+       * focus the first element.
+       */
+      if (evt.target === lastFocusable && !evt.shiftKey) {
+        evt.preventDefault();
+        firstFocusable.focus();
+      }
+      /**
+       * On the first focusable element and tab backward,
+       * focus the last element.
+       */
+      if (evt.target === firstFocusable && evt.shiftKey) {
+        evt.preventDefault();
+        lastFocusable.focus();
+      }
     }
 
     options.$container.attr('tabindex', '-1');
@@ -242,13 +297,16 @@ slate.a11y = {
 
     $(document).off('focusin');
 
-    $(document).on(eventName, function(evt) {
-      if (
-        options.$container[0] !== evt.target &&
-        !options.$container.has(evt.target).length
-      ) {
-        options.$container.focus();
-      }
+    $(document).on(eventsName.focusout, function() {
+      $(document).off(eventsName.keydown);
+    });
+
+    $(document).on(eventsName.focusin, function(evt) {
+      if (evt.target !== lastFocusable && evt.target !== firstFocusable) return;
+
+      $(document).on(eventsName.keydown, function(evt) {
+        _manageFocus(evt);
+      });
     });
   },
 
@@ -269,6 +327,84 @@ slate.a11y = {
     }
 
     $(document).off(eventName);
+  },
+
+  /**
+   * Add aria-describedby attribute to external and new window links
+   *
+   * @param {object} options - Options to be used
+   * @param {object} options.messages - Custom messages to be used
+   * @param {jQuery} options.$links - Specific links to be targeted
+   */
+  accessibleLinks: function(options) {
+    var body = document.querySelector('body');
+
+    var idSelectors = {
+      newWindow: 'a11y-new-window-message',
+      external: 'a11y-external-message',
+      newWindowExternal: 'a11y-new-window-external-message'
+    };
+
+    if (options.$links === undefined || !options.$links.jquery) {
+      options.$links = $('a:not([aria-describedby])');
+    }
+
+    function generateHTML(customMessages) {
+      if (typeof customMessages !== 'object') {
+        customMessages = {};
+      }
+
+      var messages = $.extend(
+        {
+          newWindow: 'Opens in a new window.',
+          external: 'Opens external website.',
+          newWindowExternal: 'Opens external website in a new window.'
+        },
+        customMessages
+      );
+
+      var container = document.createElement('ul');
+      var htmlMessages = '';
+
+      for (var message in messages) {
+        htmlMessages +=
+          '<li id=' + idSelectors[message] + '>' + messages[message] + '</li>';
+      }
+
+      container.setAttribute('hidden', true);
+      container.innerHTML = htmlMessages;
+
+      body.appendChild(container);
+    }
+
+    function _externalSite($link) {
+      var hostname = window.location.hostname;
+
+      return $link[0].hostname !== hostname;
+    }
+
+    $.each(options.$links, function() {
+      var $link = $(this);
+      var target = $link.attr('target');
+      var rel = $link.attr('rel');
+      var isExternal = _externalSite($link);
+      var isTargetBlank = target === '_blank';
+
+      if (isExternal) {
+        $link.attr('aria-describedby', idSelectors.external);
+      }
+      if (isTargetBlank) {
+        if (rel === undefined || rel.indexOf('noopener') === -1) {
+          $link.attr('rel', 'noopener');
+        }
+        $link.attr('aria-describedby', idSelectors.newWindow);
+      }
+      if (isExternal && isTargetBlank) {
+        $link.attr('aria-describedby', idSelectors.newWindowExternal);
+      }
+    });
+
+    generateHTML(options.messages);
   }
 };
 
@@ -1023,8 +1159,7 @@ theme.MobileNav = (function() {
   }
 
   function openMobileNav() {
-    var translateHeaderHeight =
-      cache.$siteHeader.outerHeight() + cache.$siteHeader.position().top;
+    var translateHeaderHeight = cache.$siteHeader.outerHeight();
 
     cache.$mobileNavContainer.prepareTransition().addClass(classes.navOpen);
 
@@ -2499,6 +2634,7 @@ theme.Product = (function() {
       comparePrice: '#ComparePrice-' + sectionId,
       originalPrice: '#ProductPrice-' + sectionId,
       SKU: '.variant-sku',
+      productStatus: '[data-product-status]',
       originalPriceWrapper: '.product-price__price-' + sectionId,
       originalSelectorId: '#ProductSelect-' + sectionId,
       productImageWraps: '.product-single__photo',
@@ -2506,6 +2642,7 @@ theme.Product = (function() {
       productThumbImages: '.product-single__thumbnail--' + sectionId,
       productThumbs: '.product-single__thumbnails-' + sectionId,
       productFeaturedImage: '.product-featured-img',
+      productThumbsWrapper: '.thumbnails-wrapper',
       saleClasses: 'product-price__sale product-price__sale--single',
       saleLabel: '.product-price__sale-label-' + sectionId,
       singleOptionSelector: '.single-option-selector-' + sectionId,
@@ -2592,7 +2729,7 @@ theme.Product = (function() {
 
       this.$container.on(
         'variantChange' + this.settings.namespace,
-        this._updateAddToCart.bind(this)
+        this._updateAvailability.bind(this)
       );
       this.$container.on(
         'variantImageChange' + this.settings.namespace,
@@ -2686,12 +2823,86 @@ theme.Product = (function() {
       };
 
       $(this.selectors.productThumbs).slick(options);
+
+      // Accessibility concerns not yet fixed in Slick Slider
+      $(this.selectors.productThumbsWrapper, this.$container)
+        .find('.slick-list')
+        .removeAttr('aria-live');
+      $(this.selectors.productThumbsWrapper, this.$container)
+        .find('.slick-disabled')
+        .removeAttr('aria-disabled');
+
       this.settings.sliderActive = true;
     },
 
     _destroyThumbnailSlider: function() {
       $(this.selectors.productThumbs).slick('unslick');
       this.settings.sliderActive = false;
+
+      // Accessibility concerns not yet fixed in Slick Slider
+      $(this.selectors.productThumbsWrapper, this.$container)
+        .find('[tabindex="-1"]')
+        .removeAttr('tabindex');
+    },
+
+    _liveRegionText: function(variant) {
+      // Dummy content for live region
+      var liveRegionText = '[Availability] [Regular] [$$] [Sale] [$]';
+
+      if (!variant) {
+        liveRegionText = theme.strings.unavailable;
+        return liveRegionText;
+      }
+
+      // Update availability
+      var availability = variant.available ? '' : theme.strings.soldOut + ',';
+      liveRegionText = liveRegionText.replace('[Availability]', availability);
+
+      // Update pricing information
+      var regularLabel = '';
+      var regularPrice = theme.Currency.formatMoney(
+        variant.price,
+        theme.moneyFormat
+      );
+      var saleLabel = '';
+      var salePrice = '';
+
+      if (variant.compare_at_price > variant.price) {
+        regularLabel = theme.strings.regularPrice;
+        regularPrice =
+          theme.Currency.formatMoney(
+            variant.compare_at_price,
+            theme.moneyFormat
+          ) + ',';
+        saleLabel = theme.strings.sale;
+        salePrice = theme.Currency.formatMoney(
+          variant.price,
+          theme.moneyFormat
+        );
+      }
+
+      liveRegionText = liveRegionText
+        .replace('[Regular]', regularLabel)
+        .replace('[$$]', regularPrice)
+        .replace('[Sale]', saleLabel)
+        .replace('[$]', salePrice)
+        .trim();
+
+      return liveRegionText;
+    },
+
+    _updateLiveRegion: function(evt) {
+      var variant = evt.variant;
+      var liveRegion = this.container.querySelector(
+        this.selectors.productStatus
+      );
+      liveRegion.textContent = this._liveRegionText(variant);
+      liveRegion.setAttribute('aria-hidden', false);
+
+      // hide content from accessibility tree after announcement
+      setTimeout(function() {
+        liveRegion.setAttribute('aria-hidden', true);
+      }, 1000);
     },
 
     _updateAddToCart: function(evt) {
@@ -2700,7 +2911,7 @@ theme.Product = (function() {
       if (variant) {
         $(this.selectors.productPrices)
           .removeClass('visibility-hidden')
-          .attr('aria-hidden', 'true');
+          .attr('aria-hidden', 'false');
 
         if (variant.available) {
           $(this.selectors.addToCart).prop('disabled', false);
@@ -2718,9 +2929,16 @@ theme.Product = (function() {
         $(this.selectors.addToCartText).text(theme.strings.unavailable);
         $(this.selectors.productPrices)
           .addClass('visibility-hidden')
-          .attr('aria-hidden', 'false');
+          .attr('aria-hidden', 'true');
         $(this.selectors.shopifyPaymentButton, this.$container).hide();
       }
+    },
+
+    _updateAvailability: function(evt) {
+      // update form submit
+      this._updateAddToCart(evt);
+      // update live region
+      this._updateLiveRegion(evt);
     },
 
     _updateImages: function(evt) {
@@ -2992,6 +3210,15 @@ theme.init = function() {
 
   $('a[href="#"]').on('click', function(evt) {
     evt.preventDefault();
+  });
+
+  slate.a11y.accessibleLinks({
+    messages: {
+      newWindow: theme.strings.newWindow,
+      external: theme.strings.external,
+      newWindowExternal: theme.strings.newWindowExternal
+    },
+    $links: $('a:not([aria-describedby], .product-single__thumbnail)')
   });
 };
 

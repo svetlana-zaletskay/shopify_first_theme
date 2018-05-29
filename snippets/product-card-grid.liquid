@@ -30,9 +30,9 @@
   </noscript>
 
   <div class="h4 grid-view-item__title" aria-hidden="true">{{ product.title }}</div>
-  <dl>
+  <dl class="product-card__description">
     {% if section.settings.show_vendor %}
-      <div class="grid-view-item__vendor">
+      <div class="grid-view-item__vendor product-card__vendor">
         <dt>
           <span class="visually-hidden">{{ 'products.product.vendor' | t }}</span>
         </dt>

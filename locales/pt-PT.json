@@ -19,8 +19,8 @@
       "link": "Continue comprando"
     },
     "pagination": {
-      "previous": "Anterior",
-      "next": "Seguinte",
+      "previous": "Página anterior",
+      "next": "Próxima página",
       "current_page": "Página {{ current }} de {{ total }}"
     },
     "password_page": {
@@ -46,7 +46,7 @@
       }
     },
     "search": {
-      "no_results_html": "A sua pesquisa por \"{{ terms }}\" não produziu resultados.",
+      "no_results_html": "Por favor, tente um termo de pesquisa diferente ou volte para a <a href=\"\/\">página inicial<\/a>.",
       "results_with_count": {
         "one": "{{ count }} resultado para \"{{ terms }}\"",
         "other": "{{ count }} resultados para \"{{ terms }}\""
@@ -95,11 +95,14 @@
   "blogs": {
     "article": {
       "view_all": "Ver todo",
+      "view_all_blogs": "Ver todos os artigos",
       "all_topics": "Todos os tópicos",
       "by_author": "por {{ author }}",
       "posted_in": "Postado em",
       "read_more": "Ler mais",
-      "back_to_blog": "Regressar a {{ title }}"
+      "read_more_title": "Ler mais: {{ title }}",
+      "back_to_blog": "Regressar a {{ title }}",
+      "tags": "Tag"
     },
     "comments": {
       "title": "Deixe um comentário",

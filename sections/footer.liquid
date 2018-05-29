@@ -55,6 +55,9 @@
                 <p class="form-message form-message--success">{{ 'general.newsletter_form.confirmation' | t }}</p>
               {% else %}
                 <label for="Email" class="h4">{{ 'general.newsletter_form.newsletter_email' | t }}</label>
+                {% if section.settings.footer_newsletter_subheading != blank %}
+                  <div class="rte">{{ section.settings.footer_newsletter_subheading }}</div>
+                {% endif %}
                 <div class="input-group">
                   <input type="hidden" name="contact[tags]" value="newsletter">
                   <input type="email"
@@ -194,12 +197,6 @@
       </div>
     {% endif %}
   </div>
-
-  <ul class="visually-hidden" aria-hidden="true">
-    <li id="a11y-new-window-message">{{ 'general.accessibility.link_messages.new_window' | t }}</li>
-    <li id="a11y-external-message">{{ 'general.accessibility.link_messages.external' | t }}</li>
-    <li id="a11y-new-window-external-message">{{ 'general.accessibility.link_messages.new_window_and_external' | t }}</li>
-  </ul>
 </footer>
 
 {% schema %}
@@ -249,6 +246,20 @@
           "fr": "Afficher l'inscription à la newsletter"
         },
         "default": false
+      },
+      {
+        "type": "richtext",
+        "id": "footer_newsletter_subheading",
+        "label": {
+          "en": "Subheading",
+          "de": "Unter-Überschrift",
+          "fr": "Sous-titre"
+        },
+        "default": {
+          "en": "<p>A short sentence describing what someone will receive by subscribing</p>",
+          "de": "<p>Eine kurze Beschreibung zum Inhalt des Newsletters</p>",
+          "fr": "<p>Petite phrase qui décrit ce qu'on reçoit en s'inscrivant</p>"
+        }
       },
       {
         "type": "checkbox",

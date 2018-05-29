@@ -13,7 +13,6 @@
 
 {%- assign money_price = price | money -%}
 
-<div class="product-price">
   {% if compare_at_price > price %}
 
     {% if available %}
@@ -54,4 +53,3 @@
     {% endif %}
 
   {% endif %}
-</div>

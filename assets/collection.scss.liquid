@@ -2,10 +2,14 @@ $colorText: #263238;
 $colorTextGrey: #858586;
 $colorLinkHover: #bfa588;
 $fontSizeBase: 14px;
+$fontSizeTitle: 24px;
+$fontFamilyRegular: 'arimoregular';
+$fontFamilyBold: 'arimobold';
+$bgBtnNormal: #bfa588;
+$bgBtnActive: #263238;
+$colorBtn: #fff;
 
 
-
-//properties
 @mixin transition($args...) {
   -webkit-transition: $args;
   -moz-transition: $args;
@@ -13,6 +17,18 @@ $fontSizeBase: 14px;
   -o-transition: $args;
   transition: $args;
 }
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin margin($top, $right, $bottom, $left) {
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}
+
 
 .collection-grid-item {
   margin-bottom: 110px;
@@ -31,7 +47,6 @@ $fontSizeBase: 14px;
 }
 .ln-container-collection-title {
   text-align: center;
-
 }
 .ln-collection-title {
   margin-top: 20px;
@@ -51,6 +66,60 @@ $fontSizeBase: 14px;
   }
 }
 .collection-description {
-  font-size: $fontSizeBase;
-  letter-spacing: 0.6px;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  line-height: 22px;
+  margin-bottom: 0;
+}
+.collection-container-for-background {
+  position: relative;
+  .collection-bg {
+    height: 370px;
+    background-repeat: no-repeat !important;
+    background-size: 100% auto !important;
+    background-position: 0 50% !important;
+  }
+  .collection-bg-title {
+    position: absolute;
+    top: 39%;
+    left: 18%;
+    background: rgba(255,255,255,0.5);
+    @include border-radius(4px);
+    padding: 30px 20px;
+    width: 62%;
+    text-align: center;
+    font-size: $fontSizeTitle;
+    font-family: $fontFamilyRegular;
+  }
+}
+.container-collection-filter-tags {
+  margin-top: 20px;
+  .collection-tag-button {
+    padding: 7px 10px;
+    background: $bgBtnNormal;
+    display: inline-block;
+    @include margin(10px,10px,0,0);
+    @include border-radius(4px);
+    @include transition(all 0.3s ease-in-out);
+    font-size: $fontSizeBase;
+    cursor: pointer;
+    &:hover,
+    &:active,
+    &:focus,
+    &.active {
+      background: $bgBtnActive;
+    }
+  }
+  .collection-tag-link {
+    color: $colorBtn;
+    text-transform: capitalize;
+    &:hover,
+    &:active,
+    &:focus {
+      @extend .collection-tag-link;
+    }
+  }
+}
+.filters-toolbar-wrapper {
+  margin-top: 30px;
 }

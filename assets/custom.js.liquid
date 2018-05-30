@@ -15,7 +15,6 @@ jQuery(document).ready(function () {
 
     $($('.navigation-link.nav-has-dropdown')).hover(function () {
         var container = $(this).find('.container-level-1');
-//        $(container).animate({width}, 800);
         if ($(container) && $(container).hasClass('only-one-level')) {
             $(this).toggleClass('small-menu');
         }
@@ -23,5 +22,12 @@ jQuery(document).ready(function () {
     $('.blog-content > p').each(function () {
         if ($(this).text().length > 50)
             $(this).text($(this).text().substring(0, 50) + '...');
+    });
+
+    /*----------- tags collection page ------------*/
+
+    $('li.collection-tag-button').on('click', function(){
+        $('li.collection-tag-button').removeClass('active');
+        $(this).addClass('active');
     });
 })

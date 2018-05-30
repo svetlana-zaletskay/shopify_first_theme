@@ -2,15 +2,31 @@
 assets/ajax-loader.gif:
   development: 2018-05-14T11:42:56+03:00   deca8b0ecd6974227d157b6d7068995d
 assets/arimo-bold-webfont.svg:
-  development: 2018-05-29T23:07:00+03:00   2f982c2787150836d1c71a10cd66483b
+  development: 2018-05-30T12:43:41+03:00   4a4a696103d42d37e01a39ad03b0c29c
+assets/arimo-bold-webfont.ttf:
+  development: 2018-05-30T12:43:42+03:00   72616a0d526dcaec1608b345d104012b
+assets/arimo-bold-webfont.woff:
+  development: 2018-05-30T12:43:42+03:00   3ac7194c5e3b7a4f4f0207537ef8264b
+assets/arimo-bold-webfont.woff2:
+  development: 2018-05-30T12:43:43+03:00   4b5d3a8b6189f34c336729556a87c089
+assets/arimo-regular-webfont.svg:
+  development: 2018-05-30T12:43:43+03:00   609a7ae29b4f477ee3135de7a1f5617d
+assets/arimo-regular-webfont.ttf:
+  development: 2018-05-30T12:43:44+03:00   9d455e2a59933549eb5d5ff4be726f1f
+assets/arimo-regular-webfont.woff:
+  development: 2018-05-30T12:43:44+03:00   72bf7f9fae14f07b706f1b626faecd60
+assets/arimo-regular-webfont.woff2:
+  development: 2018-05-30T12:43:45+03:00   35517e81006b239a2d8faf03d035656e
 assets/collection.scss.liquid:
-  development: 2018-05-29T22:05:23+03:00   15c75262572528f9076821d822662e4c
+  development: 2018-05-30T16:25:25+03:00   4eed828c33258fd2e3c965f8e883ed54
 assets/custom-layout.scss.liquid:
   development: 2018-05-29T22:05:33+03:00   d0d494668cf182edf0de06949c04899d
 assets/custom.js.liquid:
-  development: 2018-05-29T22:03:18+03:00   6f929548abd751cc1b0b236b3f19ff47
+  development: 2018-05-30T19:08:40+03:00   0b64f9fe5830de487de9e79092725d01
+assets/fontawesome-all.min.js:
+  development: 2018-05-30T18:06:32+03:00   c7015c8439e386a7507c597a5c4c6901
 assets/fonts.css:
-  development: 2018-05-29T22:05:44+03:00   58562e3184eb51856d084367ab2ba000
+  development: 2018-05-30T12:43:54+03:00   f93870561ff23105738027f32cc41086
 assets/gift-card.js:
   development: 2018-05-14T11:42:56+03:00   5f64ba6cb76fbcd82773489d51785bf1
 assets/gift-card.scss.liquid:
@@ -32,7 +48,7 @@ assets/theme.scss.liquid:
 assets/vendor.js:
   development: 2018-05-14T11:42:57+03:00   465fb5b94497c1cdcd55ba6cb04ffeb2
 config/settings_data.json:
-  development: 2018-05-14T11:43:03+03:00   e935443cfea7740ee0597f975abfef35
+  development: 2018-05-30T11:26:02+03:00   3f2b57171f3802217ff4d88d16acf526
 config/settings_schema.json:
   development: 2018-05-29T23:01:48+03:00   583878a8a408111cef8aceb19269aa2f
 layout/gift_card.liquid:
@@ -40,7 +56,7 @@ layout/gift_card.liquid:
 layout/password.liquid:
   development: 2018-05-14T11:42:58+03:00   2edaee9d09c63ebd65d4dfa35ee3c7b5
 layout/theme.liquid:
-  development: 2018-05-29T21:59:25+03:00   9259ac926b5675a1519e96b72c864459
+  development: 2018-05-30T19:08:33+03:00   6a139b0e0b61181b74d33f566338a130
 locales/de.json:
   development: 2018-05-14T11:42:58+03:00   fdc209286a35066be3d3def9adffb18a
 locales/en.default.json:
@@ -66,9 +82,13 @@ sections/cart-template.liquid:
 sections/collection-list.liquid:
   development: 2018-05-14T11:42:54+03:00   8da2d9a0eab92a9e7959b7fb1c579975
 sections/collection-template.liquid:
-  development: 2018-05-29T22:57:05+03:00   05c5fbddf1ed073b653be7d88160626b
+  development: 2018-05-30T18:16:39+03:00   05c5fbddf1ed073b653be7d88160626b
 sections/collection.liquid:
   development: 2018-05-14T11:42:54+03:00   b41a9d7edbb27db109cb50d93d0accab
+sections/custom-bg-img-collection.liquid:
+  development: 2018-05-30T12:55:19+03:00   e89d16bacb93fa06a7af4121e48d8872
+sections/custom-collection-template.liquid:
+  development: 2018-05-30T18:30:32+03:00   766ad2c7807a921336f8f9a0e49b8639
 sections/custom-content.liquid:
   development: 2018-05-14T11:42:55+03:00   e2c1dabc887c9f1bc17968c97de0a29f
 sections/feature-columns.liquid:
@@ -107,16 +127,18 @@ sections/quotes.liquid:
   development: 2018-05-14T11:42:56+03:00   70e88d0bab28637bf601aeaf50b6836c
 sections/rich-text.liquid:
   development: 2018-05-14T11:42:56+03:00   b174b4355b74dad2ed0de03a3d42aaad
-sections/section-bg-img-collection.liquid:
-  development: 2018-05-29T23:38:00+03:00   155983b50a923798efa2f53f837fb7ca
 sections/slideshow.liquid:
   development: 2018-05-14T11:42:56+03:00   ecf2250c5562e8947b21df280b39d327
 snippets/bgset.liquid:
   development: 2018-05-14T11:42:58+03:00   85889bbc39b57621f32fad66317366fc
 snippets/breadcrumbs.liquid:
   development: 2018-05-29T21:59:54+03:00   adcfae9bdf8a1115f04ae42442704560
+snippets/collection-grid-button.liquid:
+  development: 2018-05-30T17:45:28+03:00   86cfc36f7df19b0e134d0b1370a66cf4
 snippets/collection-grid-item.liquid:
   development: 2018-05-14T11:42:58+03:00   209c8abd3531c95e503636cc520dd9ca
+snippets/collection-list-button.liquid:
+  development: 2018-05-30T17:45:14+03:00   20f6c7617adba5f0be1a1e20d7bf3450
 snippets/comment.liquid:
   development: 2018-05-14T11:42:58+03:00   50406c82467014e1bbe15a62685b2536
 snippets/custom-collection-grid-item.liquid:
@@ -235,6 +257,8 @@ snippets/icon-youtube.liquid:
   development: 2018-05-14T11:43:01+03:00   9d72c5bc3eaa14a3e7aefd921881b1ae
 snippets/image-style.liquid:
   development: 2018-05-14T11:43:01+03:00   2d807ad1f4831d306d8e190b89d45c00
+snippets/list.liquid:
+  development: 2018-05-30T18:03:10+03:00   e4a8b3b748a4a94d307c757243024de8
 snippets/no-blocks.liquid:
   development: 2018-05-14T11:43:01+03:00   0cb7d758b6df0feb07ae5804b4b627fa
 snippets/pagination.liquid:
@@ -253,6 +277,8 @@ snippets/social-meta-tags.liquid:
   development: 2018-05-14T11:43:02+03:00   ae9e213401623b2601abf0ace8e21537
 snippets/social-sharing.liquid:
   development: 2018-05-14T11:43:02+03:00   011dd5c58fa718c8016b784f2d9fa92b
+snippets/squares.liquid:
+  development: 2018-05-30T18:02:57+03:00   73a7e1f37429d431210ace5b3fafb09a
 templates/404.liquid:
   development: 2018-05-14T11:43:02+03:00   805b16263cdf5c85be9c507ad6b03623
 templates/article.liquid:
@@ -262,7 +288,7 @@ templates/blog.liquid:
 templates/cart.liquid:
   development: 2018-05-14T11:43:02+03:00   714b4b7c62d583b231f339bbd1b85d03
 templates/collection.liquid:
-  development: 2018-05-29T23:35:07+03:00   4710fb54f0b1c0fad1d58f953ac670f7
+  development: 2018-05-30T18:27:24+03:00   913626a768af035697f0ab4e1319067a
 templates/customers/account.liquid:
   development: 2018-05-14T11:43:02+03:00   2150e58e96e6435f4449d4a71b395aa6
 templates/customers/activate_account.liquid:

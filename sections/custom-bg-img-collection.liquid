@@ -1,0 +1,24 @@
+<div class="collection-container-for-background">
+    <div class="collection-bg" style="background: url({{ section.settings.bgImage | img_url: '2048x600', crop: 'top' }} )";></div>
+    <div class="collection-bg-title">{{ collection.title }}
+    </div>
+</div>
+{% schema %}
+    {
+        "name": "Background Image",
+        "settings": [
+
+                        {
+                        "type": "image_picker",
+                        "id": "bgImage",
+                        "label": "Collection Background Image"
+                        }
+        ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

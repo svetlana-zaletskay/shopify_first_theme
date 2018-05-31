@@ -88,7 +88,7 @@ sections/collection.liquid:
 sections/custom-bg-img-collection.liquid:
   development: 2018-05-30T12:55:19+03:00   e89d16bacb93fa06a7af4121e48d8872
 sections/custom-collection-template.liquid:
-  development: 2018-05-30T22:55:10+03:00   1a3766c365854307ea81d0cb9a8c0a4e
+  development: 2018-05-31T11:59:11+03:00   8f9e5749256ddd9af947525140d657c4
 sections/custom-content.liquid:
   development: 2018-05-14T11:42:55+03:00   e2c1dabc887c9f1bc17968c97de0a29f
 sections/feature-columns.liquid:

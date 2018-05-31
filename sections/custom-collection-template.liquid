@@ -206,7 +206,7 @@
                             <a href="{{ product.url | within: collection }}" class="list-view-item__link">
                                 {% include 'product-card-list', product: product %}
                             </a>
-                        </li>
+                        </div>
                     {% else %}
 
                         {% comment %}
@@ -363,5 +363,6 @@
     }
     ]
     }
+
 
 {% endschema %}

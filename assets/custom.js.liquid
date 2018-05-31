@@ -24,10 +24,12 @@ jQuery(document).ready(function () {
             $(this).text($(this).text().substring(0, 50) + '...');
     });
 
-    /*----------- tags collection page ------------*/
+    /*------------ collection change view ---------------*/
 
-    $('li.collection-tag-button').on('click', function(){
-        $('li.collection-tag-button').removeClass('active');
-        $(this).addClass('active');
-    });
+    $('.btn-change-view-grid').on('click', function () {
+         $('#collection-change-view').addClass('change-grid');
+    })
+    $('.btn-change-view-list').on('click', function () {
+             $('#collection-change-view').addClass('change-list');
+        })
 })
